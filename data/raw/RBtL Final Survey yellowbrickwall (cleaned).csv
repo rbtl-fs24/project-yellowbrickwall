@@ -1,0 +1,14 @@
+age;flat_size;livingscience_months;switzerland_months;campus_familiarity;PAPER;CARDBOARD;GLASS;ALUMINIUM;PET;ORGANIC;FABRIC
+19;6;2;8;10;recycle;recycle;recycle;recycle;recycle;uninformed_about_location;recycle
+19;2;8;8;9;recycle;recycle;recycle;recycle;recycle;uninformed_about_location;recycle
+20;2;3;0;10;recycle;recycle;recycle;recycle;recycle;inconvenient;recycle
+28;2;18;18;6;recycle;#N/A;recycle;recycle;inconvenient;inconvenient;#N/A
+20;1;6;18;4;uninformed_in_general;recycle;uninformed_in_general;inconvenient;recycle;uninformed_about_location;uninformed_in_general
+23;2;1;0;7;recycle;recycle;recycle;recycle;recycle;inconvenient;inconvenient
+22;6;24;0;9;recycle;recycle;recycle;recycle;recycle;recycle;Never used it
+23;6;24;0;10;recycle;recycle;recycle;recycle;recycle;recycle;recycle
+25;2;36;0;8;recycle;recycle;recycle;recycle;recycle;recycle;recycle
+25;2;12;0;10;recycle;recycle;recycle;recycle;recycle;recycle;recycle
+21;6;48;48;8;#N/A;No cardboard waste;recycle;recycle;recycle;uninformed_in_general;#N/A
+22;6;36;36;8;recycle;recycle;recycle;recycle;recycle;inconvenient;#N/A
+23;6;24;24;8;recycle;uninformed_about_location;recycle;recycle;recycle;inconvenient;uninformed_about_location

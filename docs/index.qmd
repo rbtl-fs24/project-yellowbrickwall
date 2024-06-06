@@ -27,7 +27,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(forcats)
-data <- read.csv2("/cloud/project/data/processed/survey_data_processed.csv")
+data <- read.csv2("/cloud/project/data/processed/data_processed.csv")
 ```
 
 ## Survey Subject Overview
@@ -42,8 +42,8 @@ library(gt)
 means <- data |>
   summarise(
     age_avg = mean(age, na.rm = TRUE),
-    flat_avg = mean(people_in_flat, na.rm = TRUE),
-    livingscience_avg = mean(livingscience_duration, na.rm = TRUE),
+    flat_avg = mean(flat_size, na.rm = TRUE),
+    livingscience_avg = mean(livingscience_months, na.rm = TRUE),
     assessment_avg = mean(campus_familiarity, na.rm = TRUE)
   )
 
@@ -68,10 +68,10 @@ means |>
 #| label: fig-global-percentages
 #| fig-cap: "Percentage of Livingscience inhabitants recycling different types of waste."
 recyclables <- data |>
-  select(Paper, Cardboard, Glass, Aluminium, PET, Organic, Fabric)
+  select(PAPER, CARDBOARD, GLASS, ALUMINIUM, PET, ORGANIC, FABRIC)
 
 count_recycle <- recyclables |>
-  summarise(across(everything(), ~ sum(. == "recycle")/14*100)) |>
+  summarise(across(everything(), ~ sum(. == "recycle")/13*100)) |>
   pivot_longer(everything(), names_to = "Category", values_to = "Percentage")
 
 ggplot(data = count_recycle, 
@@ -92,28 +92,10 @@ ggplot(data = count_recycle,
 ```{r}
 #| label: fig-recycling-upbringing
 #| fig-cap: "Number of types of waste recycled by inhabitants, grouped by whether they grew up in switzerland or not."
-individual <- data |>
-  rowwise() |>
-  mutate(recycle_count = sum(c(
-    Paper == "recycle",
-    Cardboard == "recycle",
-    Aluminium == "recycle",
-    PET == "recycle",
-    Organic == "recycle",
-    Fabric == "recycle",
-    Glass == "recycle"
-  ))) |>
-  mutate(grown_up_in_switzerland = case_when(
-    switzerland_duration == 100 ~ "yes",
-    switzerland_duration != 100 ~ "no",
-    is.na(age) ~ NA_character_
-  )) |>
-  ungroup() |>
-  na.omit(data)
 
-ggplot(data = individual, 
+ggplot(data = data, 
        aes(x = grown_up_in_switzerland,
-            y = recycle_count)) +
+            y = recycle_number)) +
   geom_boxplot(fill = "grey") +
   labs(title = "Comparison of recycling habits by upbringing",
        x = "Grown up in Switzerland?",
@@ -128,9 +110,9 @@ ggplot(data = individual,
 ```{r}
 #| label: fig-flat-size
 #| fig-cap: "Number of types of waste recycled by inhabitants, grouped by the number of people in their flat."
-ggplot(data = individual, 
-       aes(x = as.character(people_in_flat),
-            y = recycle_count)) +
+ggplot(data = data, 
+       aes(x = as.character(flat_size),
+            y = recycle_number)) +
   geom_boxplot(fill = "grey") +
   labs(title = "Comparison of recycling habits by flat size",
        x = "Total number of people in flat",

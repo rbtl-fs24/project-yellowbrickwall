@@ -1,0 +1,9 @@
+RBtL Final Survey yellowbrickwall.csv: Original data downloaded directly form Google Forms survey responses page. Reading the google sheet didn't work.
+
+RBtL Final Survey yellowbrickwall.csv (cleaned):
+This data was cleaned manually using Excel
+  - Renamed columns
+  - Deleted columns with data that is not used
+  - Inserted N/As for answers which could not be reasonably evaluated
+  - Unified time format from years&months to just months
+  - "0" as a value in "switzerland_duration"" now means "grew up in Switzerland" (before: actual timespan lived in switzerland)
