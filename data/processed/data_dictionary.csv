@@ -1,0 +1,10 @@
+variable_name;description
+age;Age of the paricipant in years
+people_in_flat;The total number of people living in the participant's flat
+livingscience_duration;How long the participant has been living in livingscience in months
+switzerland_duration;How long the participant has been living in switzerland in months (100 means since birth)
+recycling_familiarity;How well informed does the participant assess themselves about local waste separation and recycling standards (1-10)
+campus_familiarity;How well informed does the participant assess themselves about recycling locations on campus? (1-10)
+trash;Does the participant use the blue zueri bags for trash? (yes/no)
+paper, cardboard, glass, aluminium, pet, organic, fabric;"Does the participant recycle these types of waste on campus? (""recycle"" (yes) or reason why not)"
+electronics_and_batteries;What does the participant do with their electronic waste and empty batteries? (Bad question if combined)
