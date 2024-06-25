@@ -26,8 +26,8 @@ For the questioning, a survey was presented to passers-by around the Livingscien
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(forcats)
-data <- read.csv2("/cloud/project/data/processed/data_processed.csv")
+library(forcats) 
+data <- read.csv2(here::here("data/processed/data_processed.csv"))
 ```
 
 ## Survey Subject Overview
